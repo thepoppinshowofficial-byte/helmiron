@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="HELMIRON termékinformációk, összetevők és rendelési tudnivalók.">
-<title>HELMIRON | Termékinformációk</title>
+<title>HELMIRON | Termékinformációk és ajánlat</title>
 
 <style>
 :root {
-  --green: #32724e;
-  --dark: #20342a;
-  --cream: #f7f7f0;
-  --pale: #e8f0e6;
-  --gold: #efc75e;
-  --text: #29332d;
-  --muted: #69756d;
-  --line: #dce4dc;
+  --green: #38833b;
+  --dark: #241e1a;
+  --yellow: #ffb817;
+  --text: #292929;
+  --muted: #6a6a6a;
+  --line: #e5e5e5;
+  --cream: #fafafa;
 }
 
 * { box-sizing: border-box; }
@@ -24,647 +22,639 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--cream);
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
   color: var(--text);
-  font: 16px/1.6 Arial, sans-serif;
+  background: #fff;
 }
 
 .wrap {
-  width: min(1120px, 92%);
+  width: min(1050px, 94%);
   margin: auto;
 }
 
-.topbar {
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-}
+.hero { padding: 30px 0 22px; }
 
-.nav {
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.brand {
+h1 {
+  text-align: center;
+  font-size: clamp(30px, 4.5vw, 48px);
+  line-height: 1.13;
+  margin: 0 auto 26px;
+  max-width: 950px;
+  color: var(--dark);
   font-weight: 900;
-  font-size: 27px;
-  letter-spacing: 1px;
-  color: var(--green);
-}
-
-.nav-note {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  color: var(--muted);
-}
-
-.hero {
-  background: linear-gradient(115deg, #f2f3e8, #e1ebdf);
-  padding: 44px 0 48px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
-  gap: 28px;
+  gap: 30px;
   align-items: center;
 }
 
-.kicker {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--green);
-  font-weight: 800;
-}
+/* Product bottle illustration */
 
-h1 {
-  font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  margin: 12px 0 18px;
-  color: var(--dark);
-}
-
-h2 {
-  font-size: clamp(25px, 3vw, 36px);
-  line-height: 1.18;
-  color: var(--dark);
-  margin: 0 0 18px;
-}
-
-h3 {
-  font-size: 23px;
-  line-height: 1.25;
-  color: var(--dark);
-  margin: 0 0 14px;
-}
-
-p { margin: 0 0 15px; }
-
-.hero p {
-  max-width: 570px;
-  color: #4f6155;
-  font-size: 18px;
-}
-
-.highlight {
-  display: inline-block;
-  background: var(--green);
-  color: white;
-  padding: 3px 9px;
-  border-radius: 4px;
-}
-
-.hero-art {
-  min-height: 320px;
+.product-stage {
+  min-height: 390px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  background: #fff;
 }
 
-.leaf {
-  position: absolute;
-  width: 210px;
-  height: 120px;
-  border-radius: 100% 0 100% 0;
-  background: #9bb998;
-  opacity: .55;
-  transform: rotate(-28deg);
-}
-
-.leaf.l2 {
-  width: 160px;
-  height: 90px;
-  background: #c5d5a4;
-  transform: rotate(25deg) translate(90px, 70px);
-}
-
-.jar {
+.bottle {
   position: relative;
-  width: 190px;
-  height: 230px;
-  border-radius: 27px 27px 35px 35px;
-  background: linear-gradient(90deg, #f0ead9, #fffdf3 48%, #e6dfc9);
-  border: 1px solid #d8d1bc;
-  box-shadow: 18px 22px 35px #243c2925;
-  z-index: 1;
+  width: 220px;
+  height: 325px;
+  border-radius: 35px 35px 42px 42px;
+  background: linear-gradient(
+    90deg, #171717, #090909 24%,
+    #202020 48%, #050505 80%, #191919
+  );
+  box-shadow: 14px 18px 28px #0002;
 }
 
-.jar-cap {
+.bottle:before {
+  content: "";
   position: absolute;
-  width: 112px;
-  height: 34px;
-  top: -27px;
-  left: 39px;
-  border-radius: 8px 8px 3px 3px;
-  background: #345b43;
+  top: -35px;
+  left: 38px;
+  width: 144px;
+  height: 45px;
+  border-radius: 11px 11px 4px 4px;
+  background: repeating-linear-gradient(
+    90deg, #111 0 3px, #292929 3px 5px
+  );
 }
 
-.jar-label {
+.bottle:after {
+  content: "";
   position: absolute;
-  top: 66px;
-  left: 12px;
-  right: 12px;
-  background: white;
-  border: 1px solid var(--line);
+  top: 45px;
+  left: 0;
+  right: 0;
+  height: 235px;
+  background: linear-gradient(
+    135deg,
+    #f4a7a0 0 16%,
+    #f6f0d9 16% 29%,
+    #b8d9cd 29% 44%,
+    #f4f1df 44% 60%,
+    #f08d7c 60% 100%
+  );
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.bottle-label {
+  position: absolute;
+  z-index: 2;
+  top: 105px;
+  left: -3px;
+  right: -3px;
   text-align: center;
-  padding: 19px 7px;
+  color: #1b1b1b;
 }
 
-.jar-label strong {
-  display: block;
-  font-size: 22px;
-  letter-spacing: 2px;
-  color: var(--green);
-}
-
-.jar-label small {
-  display: block;
-  font-size: 9px;
+.bottle-label .tiny {
+  font-size: 10px;
   letter-spacing: 1px;
-  margin-top: 8px;
-  color: #6b776e;
 }
 
-.btn {
-  display: inline-flex;
+.bottle-label strong {
+  display: block;
+  font-size: 31px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin: 5px 0;
+}
+
+.bottle-label .band {
+  display: block;
+  background: #ef8c7e;
+  padding: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.bottle-label .desc {
+  font-size: 10px;
+  line-height: 1.35;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.seal {
+  position: absolute;
+  left: 5%;
+  top: 7%;
+  border: 5px dotted #e9b900;
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  background: #161616;
+  color: #f8d33b;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+/* Discount and lead form card */
+
+.offer-box {
+  background: #f3f1f1;
+  padding: 18px;
+  max-width: 360px;
+  width: 100%;
+  margin: auto;
+}
+
+.offer-inner {
+  background: #fff;
+  padding: 0 14px 22px;
+}
+
+.offer-head {
+  background: var(--green);
+  color: #fff;
+  text-align: center;
+  padding: 13px 8px 7px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.offer-head .discount {
+  display: block;
+  font-size: 25px;
+}
+
+.offer-head small {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.price {
+  text-align: center;
+  padding: 8px 0 12px;
+  font-weight: 800;
+  font-size: 27px;
+  color: #050505;
+  line-height: 1.25;
+}
+
+.old-price {
+  display: block;
+  color: #aaa;
+  text-decoration: line-through;
+  font-size: 19px;
+  font-weight: normal;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 12px 0 5px;
+}
+
+.required { color: #d22; }
+
+.field {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #f1eded;
+  padding: 10px 11px;
+  font: 15px Arial, sans-serif;
+  min-height: 39px;
+}
+
+.field:focus {
+  outline: 2px solid #9bc49b;
+}
+
+.order-btn {
+  display: block;
+  width: 100%;
+  margin: 28px auto 8px;
+  background: linear-gradient(#ffc735, #ffad00);
+  border: 0;
+  border-radius: 5px;
+  padding: 13px 8px;
+  color: #252525;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  box-shadow: 0 3px 0 #d98c00;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.order-btn:hover {
+  background: linear-gradient(#ffd45c, #f4a900);
+}
+
+.secure {
+  text-align: center;
+  font-size: 10px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.form-disclaimer {
+  font-size: 10px;
+  line-height: 1.4;
+  color: #777;
+  text-align: center;
+  margin: 9px 0 0;
+}
+
+/* Shipping and warning */
+
+.shipping {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: var(--green);
-  color: white;
-  text-decoration: none;
-  border: 0;
-  border-radius: 7px;
-  padding: 15px 23px;
-  font-weight: 800;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 5px 0 #204e35;
-  transition: .15s;
+  gap: 15px;
+  margin: 35px auto 20px;
+  font-weight: bold;
+  max-width: 400px;
+  text-align: center;
 }
 
-.btn:hover {
-  background: #245c3d;
-  transform: translateY(-1px);
+.shipping strong {
+  font-size: 19px;
+  line-height: 1.15;
 }
 
-.btn.gold {
-  background: #e9bd4c;
-  color: #243126;
-  box-shadow: 0 5px 0 #b58b2d;
-}
-
-.smallprint {
+.shipping span {
+  border-left: 2px solid #ddd;
+  padding-left: 15px;
   font-size: 12px;
-  color: var(--muted);
-  margin-top: 13px;
+  font-weight: normal;
 }
 
-.section { padding: 58px 0; }
-
-.section.white { background: white; }
-
-.center { text-align: center; }
-
-.intro {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #59665e;
+.warning {
+  border: 2px dashed #222;
+  padding: 17px 20px;
+  margin: 20px auto 42px;
+  max-width: 740px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
-.benefits,
-.ingredients {
+.warning h2 {
+  color: #ed2939;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+/* Lower content */
+
+.section {
+  padding: 42px 0;
+  background: #f8f8f5;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 0 20px;
+}
+
+.content {
+  max-width: 850px;
+  margin: auto;
+  color: #555;
+}
+
+.content p { margin: 0 0 14px; }
+
+.cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 17px;
-  margin-top: 28px;
+  gap: 14px;
+  margin-top: 24px;
 }
 
-.benefit,
-.ingredient {
+.card {
   background: white;
   border: 1px solid var(--line);
-  border-radius: 13px;
-  padding: 24px;
+  border-radius: 10px;
+  padding: 18px;
 }
 
-.benefit .symbol {
-  font-size: 29px;
-  margin-bottom: 10px;
+.card h3 {
+  font-size: 17px;
+  margin: 0 0 8px;
 }
 
-.benefit h3,
-.ingredient h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.benefit p,
-.ingredient p {
+.card p {
   font-size: 14px;
-  color: var(--muted);
   margin: 0;
+  color: #666;
 }
 
-.ingredient { background: #f8faf6; }
+.how { padding: 40px 0; }
+
+.how h2 { text-align: center; }
 
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 28px;
+  gap: 12px;
 }
 
 .step {
-  background: white;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 20px;
+  padding: 17px;
+  border-radius: 9px;
 }
 
-.step-num {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--pale);
-  color: var(--green);
-  font-weight: 900;
-  margin-bottom: 12px;
+.step b {
+  display: block;
+  margin-bottom: 8px;
 }
 
 .step p {
-  font-size: 14px;
-  color: var(--muted);
+  font-size: 13px;
+  color: #666;
   margin: 0;
 }
 
-.offer {
-  background: linear-gradient(135deg, #e7efe2, #f8f5e9);
-  padding: 60px 0;
-}
-
-.offer-card {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 30px;
-  align-items: center;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 30px;
-  box-shadow: 0 15px 38px #20342a10;
-}
-
-.offer-art {
-  background: #eef4e9;
-  border-radius: 14px;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.formbox h2 { font-size: 30px; }
-
-.formbox p { color: var(--muted); }
-
-.form-note {
-  background: #f6f8f3;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 12px;
-  color: var(--muted);
-  margin: 12px 0;
-}
-
-.notice {
-  font-size: 12px;
-  color: var(--muted);
+.disclaimer {
+  font-size: 11px;
+  color: #777;
   max-width: 900px;
-  margin: 25px auto 0;
-}
-
-.faq {
-  max-width: 850px;
-  margin: 25px auto 0;
-}
-
-.faq details {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 16px 18px;
-  margin: 10px 0;
-}
-
-.faq summary {
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.faq details p {
-  margin: 12px 0 0;
-  color: var(--muted);
+  margin: 24px auto;
 }
 
 footer {
-  background: #1e3528;
-  color: #e8efe8;
-  padding: 30px 0;
+  background: #202820;
+  color: #eee;
+  padding: 24px 0;
   font-size: 12px;
 }
 
 footer a {
-  color: #e8efe8;
-  margin-right: 15px;
+  color: #eee;
+  margin-right: 16px;
 }
 
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-@media(max-width:760px) {
-  .hero-grid,
-  .offer-card { grid-template-columns: 1fr; }
-
-  .hero-art { min-height: 260px; }
-
-  .benefits,
-  .ingredients { grid-template-columns: 1fr; }
-
+@media(max-width:700px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .product-stage { min-height: 330px; }
+  .bottle { transform: scale(.88); }
+  .offer-box { max-width: 390px; }
+  .cards { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
-
-  .section { padding: 42px 0; }
-
-  .offer-card { padding: 18px; }
+  h1 { margin-bottom: 20px; }
 }
 
 @media(max-width:430px) {
   .steps { grid-template-columns: 1fr; }
-
-  .nav-note { font-size: 10px; }
-
-  .btn { width: 100%; }
-
-  .hero { padding-top: 34px; }
+  .hero { padding-top: 24px; }
+  .shipping { gap: 9px; }
+  .shipping span { padding-left: 9px; }
 }
 </style>
 </head>
 
 <body>
-
-<header class="topbar">
-  <div class="wrap nav">
-    <div class="brand">HELMIRON<span style="color:#b7c99c">.</span></div>
-    <div class="nav-note">Termékinformációk</div>
-  </div>
-</header>
-
 <main>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="kicker">Ismerje meg a terméket</div>
+<div class="wrap">
 
-      <h1>
-        HELMIRON<br>
-        <span class="highlight">Termékinformációk</span>
-      </h1>
+<h1>Rendeljen HELMIRON-t most 50% kedvezménnyel!</h1>
 
-      <p>
-        Tájékozódjon az összetevőkről, a használati útmutatóról
-        és a rendelés menetéről, mielőtt döntést hoz.
-      </p>
+<div class="hero-grid">
 
-      <a class="btn gold" href="#lead-form">
-        ÉRDEKEL A TERMÉK →
-      </a>
+<div class="product-stage" aria-label="Helmiron termékcsomagolás illusztrációja">
+  <div class="seal">100%<br>TERMÉK<br>INFO</div>
 
-      <p class="smallprint">
-        A termék részleteit és elérhetőségét az ajánlati oldalon ellenőrizze.
-      </p>
-    </div>
-
-    <div class="hero-art" aria-label="Helmiron termék illusztráció">
-      <div class="leaf"></div>
-      <div class="leaf l2"></div>
-
-      <div class="jar">
-        <div class="jar-cap"></div>
-        <div class="jar-label">
-          <strong>HELMIRON</strong>
-          <small>TERMÉKINFORMÁCIÓ</small>
-        </div>
+  <div class="bottle">
+    <div class="bottle-label">
+      <div class="tiny">FOOD SUPPLEMENT</div>
+      <strong>HELMIRON</strong>
+      <span class="band">Digestive Herbal Blend</span>
+      <div class="desc">
+        COMBINATION OF PLANT<br>
+        EXTRACTS AND PAPAIN ENZYME
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section white">
-  <div class="wrap center">
-    <div class="kicker">Áttekintés</div>
-    <h2>Mi az a Helmiron?</h2>
+<div class="offer-box" id="lead-form">
+  <div class="offer-inner">
 
-    <p class="intro">
-      Ezen az oldalon általános termékinformációkat talál.
-      Rendelés előtt mindig olvassa el a csomagoláson feltüntetett
-      összetevőket, figyelmeztetéseket és használati útmutatót.
+    <div class="offer-head">
+      Akció! Csak ma:
+      <span class="discount">-50%</span>
+      <small>Kedvezmény</small>
+    </div>
+
+    <div class="price">
+      <span class="old-price">19800 Ft</span>
+      9900 Ft
+    </div>
+
+    <!--
+      The form is a visual lead form.
+      The entered details are NOT sent to Dr.Cash.
+      Connect an approved lead endpoint before collecting submissions.
+    -->
+
+    <form id="leadForm">
+
+      <label class="form-label" for="leadName">
+        Kereszt-és vezetéknév:
+        <span class="required">*</span>
+      </label>
+
+      <input
+        class="field"
+        id="leadName"
+        name="name"
+        type="text"
+        placeholder="Adja meg nevét"
+        autocomplete="name"
+        required
+      >
+
+      <label class="form-label" for="leadPhone">
+        Telefonszám:
+        <span class="required">*</span>
+      </label>
+
+      <input
+        class="field"
+        id="leadPhone"
+        name="phone"
+        type="tel"
+        placeholder="Adja meg telefonszámát"
+        autocomplete="tel"
+        required
+      >
+
+      <button class="order-btn" type="submit">
+        RENDELJE MEG MOST
+      </button>
+
+    </form>
+
+    <div class="secure">🔒 Az adatai védettek</div>
+
+    <p class="form-disclaimer">
+      A folytatás az ajánlati oldalra irányítja.
+      A megadott adatokat ez az űrlap nem küldi el.
     </p>
 
-    <div class="benefits">
-      <article class="benefit">
-        <div class="symbol">🌿</div>
-        <h3>Összetevők áttekintése</h3>
-        <p>Tekintse át a teljes összetevőlistát és az allergéneket a termék címkéjén.</p>
-      </article>
-
-      <article class="benefit">
-        <div class="symbol">📋</div>
-        <h3>Használati útmutató</h3>
-        <p>Kövesse a csomagoláson szereplő adagolási és tárolási utasításokat.</p>
-      </article>
-
-      <article class="benefit">
-        <div class="symbol">ℹ️</div>
-        <h3>Tudatos döntés</h3>
-        <p>Kérdés esetén kérje egészségügyi szakember tanácsát.</p>
-      </article>
-    </div>
   </div>
+</div>
+
+</div>
+
+<div class="shipping">
+  <strong>Ingyenes<br>szállítás!</strong>
+  <span>🔒 Előre fizetés nélkül</span>
+</div>
+
+<div class="warning">
+  <h2>FIGYELJEN A HAMISÍTOTT TERMÉKEKRE!</h2>
+
+  <p>
+    Vásárlás előtt ellenőrizze a termék eredetét,
+    a kereskedő adatait, az összetevőket és a rendelési
+    feltételeket. Ne hagyatkozzon ellenőrizetlen állításokra.
+  </p>
+
+  <p>
+    <b>
+      Az aktuális termék- és rendelési információkat
+      az ajánlati oldalon ellenőrizze.
+    </b>
+  </p>
+</div>
+
+</div>
 </section>
 
 <section class="section">
-  <div class="wrap">
-    <div class="center">
-      <div class="kicker">Összetevőkkel kapcsolatos információk</div>
-      <h2>Mit érdemes ellenőrizni?</h2>
-      <p class="intro">
-        A pontos összetételt mindig a termék aktuális címkéje alapján ellenőrizze.
-      </p>
-    </div>
+<div class="wrap">
 
-    <div class="ingredients">
-      <article class="ingredient">
-        <h3>Növényi összetevők</h3>
-        <p>Olvassa el a címkén feltüntetett növényi összetevőket és azok mennyiségét.</p>
-      </article>
+<h2>Mi az a Helmiron?</h2>
 
-      <article class="ingredient">
-        <h3>Allergének és figyelmeztetések</h3>
-        <p>Ellenőrizze az allergéninformációkat és a használatra vonatkozó figyelmeztetéseket.</p>
-      </article>
+<div class="content">
+  <p>
+    Ezen az oldalon általános termékinformációkat talál.
+    Rendelés előtt olvassa el a csomagoláson feltüntetett
+    összetevőket, figyelmeztetéseket és használati útmutatót.
+  </p>
 
-      <article class="ingredient">
-        <h3>Használati útmutató</h3>
-        <p>Ne lépje túl a címkén feltüntetett ajánlott napi adagot.</p>
-      </article>
-    </div>
+  <p>
+    A pontos összetétel, az ár, a szállítási feltételek
+    és az elérhetőség a termék aktuális ajánlati oldalán
+    ellenőrizhető.
+  </p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <h3>Összetevők</h3>
+    <p>Ellenőrizze a címkén feltüntetett összetevőket és allergéneket.</p>
   </div>
+
+  <div class="card">
+    <h3>Használati útmutató</h3>
+    <p>Kövesse a csomagoláson található használati és tárolási utasításokat.</p>
+  </div>
+
+  <div class="card">
+    <h3>Tudatos döntés</h3>
+    <p>Egészségügyi kérdés esetén kérje orvos vagy gyógyszerész tanácsát.</p>
+  </div>
+</div>
+
+</div>
 </section>
 
-<section class="section white">
-  <div class="wrap center">
-    <div class="kicker">A rendelés menete</div>
-    <h2>Hogyan tovább?</h2>
+<section class="how">
+<div class="wrap">
 
-    <div class="steps">
-      <article class="step">
-        <div class="step-num">1</div>
-        <strong>Termékinformáció</strong>
-        <p>Olvassa el a rendelkezésre álló információkat.</p>
-      </article>
+<h2>Hogyan lehet megrendelni?</h2>
 
-      <article class="step">
-        <div class="step-num">2</div>
-        <strong>Ajánlat megtekintése</strong>
-        <p>A gombbal nyissa meg a kampány ajánlati oldalát.</p>
-      </article>
-
-      <article class="step">
-        <div class="step-num">3</div>
-        <strong>Űrlap kitöltése</strong>
-        <p>Az ajánlati oldalon adja meg a kért adatokat, ha folytatni szeretné.</p>
-      </article>
-
-      <article class="step">
-        <div class="step-num">4</div>
-        <strong>Visszaigazolás</strong>
-        <p>Kövesse az ajánlati oldalon megjelenő további lépéseket.</p>
-      </article>
-    </div>
+<div class="steps">
+  <div class="step">
+    <b>1. Tekintse meg az ajánlatot</b>
+    <p>Nyissa meg az ajánlati oldalt a fenti gombbal.</p>
   </div>
-</section>
 
-<section class="offer" id="lead-form">
-  <div class="wrap">
-    <div class="offer-card">
-
-      <div class="offer-art">
-        <div class="jar">
-          <div class="jar-cap"></div>
-          <div class="jar-label">
-            <strong>HELMIRON</strong>
-            <small>TERMÉKINFORMÁCIÓ</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="formbox">
-        <div class="kicker">Következő lépés</div>
-        <h2>Tekintse meg az ajánlatot</h2>
-
-        <p>
-          Az ajánlati oldalon ellenőrizheti az aktuális árat,
-          a feltételeket és az elérhetőséget.
-        </p>
-
-        <!-- Dr.Cash tracking link -->
-        <a
-          class="btn"
-          style="width:100%"
-          href="https://affiliate.dr.cash/offer/32805"
-          target="_blank"
-          rel="sponsored nofollow noopener noreferrer"
-        >
-          AJÁNLAT MEGTEKINTÉSE →
-        </a>
-
-        <div class="form-note">
-          Az ajánlati oldalon jelenhet meg a név- és telefonszám-űrlap,
-          ha azt az ajánlat biztosítja. Ez az oldal önmagában nem küld személyes adatokat.
-        </div>
-
-        <p class="smallprint">
-          A gomb az affiliate követési linken keresztül az ajánlati oldalra irányítja át.
-        </p>
-      </div>
-
-    </div>
-
-    <p class="notice">
-      Fontos: Ez az oldal általános termékinformációkat közöl, és nem állítja,
-      hogy a termék betegséget diagnosztizál, kezel, gyógyít vagy megelőz.
-      Az étrend-kiegészítő nem helyettesíti a változatos, kiegyensúlyozott
-      étrendet vagy az egészségügyi szakember tanácsát.
-    </p>
+  <div class="step">
+    <b>2. Olvassa el a feltételeket</b>
+    <p>Ellenőrizze az árat, a szállítást és az adatkezelési információkat.</p>
   </div>
-</section>
 
-<section class="section">
-  <div class="wrap center">
-    <div class="kicker">Gyakori kérdések</div>
-    <h2>Hasznos tudnivalók</h2>
-
-    <div class="faq">
-      <details>
-        <summary>Hol ellenőrizhetem az összetevőket?</summary>
-        <p>Olvassa el a termék csomagolásán és az ajánlati oldalon található aktuális összetevőlistát és figyelmeztetéseket.</p>
-      </details>
-
-      <details>
-        <summary>Hogyan rendelhetek?</summary>
-        <p>Kattintson az „Ajánlat megtekintése” gombra, majd kövesse az ajánlati oldalon feltüntetett lépéseket.</p>
-      </details>
-
-      <details>
-        <summary>Mit tegyek, ha egészségügyi kérdésem van?</summary>
-        <p>Kérjen tanácsot orvostól vagy gyógyszerésztől, különösen akkor, ha gyógyszert szed vagy egészségügyi állapota van.</p>
-      </details>
-    </div>
+  <div class="step">
+    <b>3. Töltse ki az űrlapot</b>
+    <p>Ha folytatja, az ajánlati oldalon adja meg a kért adatokat.</p>
   </div>
+
+  <div class="step">
+    <b>4. Kövesse a visszaigazolást</b>
+    <p>Kövesse a szolgáltató további utasításait.</p>
+  </div>
+</div>
+
+<p class="disclaimer">
+  Fontos: Ez az oldal általános termékinformációkat közöl,
+  és nem állítja, hogy a termék betegséget diagnosztizál,
+  kezel, gyógyít vagy megelőz. Az étrend-kiegészítő nem
+  helyettesíti a változatos, kiegyensúlyozott étrendet vagy
+  az egészségügyi szakember tanácsát. Az ár és az ajánlat
+  feltételei változhatnak.
+</p>
+
+</div>
 </section>
 
 </main>
 
 <footer>
-  <div class="wrap footer-row">
-    <div>
-      <strong>HELMIRON — Termékinformációk</strong>
-      <p style="margin:8px 0 0">
-        Affiliate tájékoztató: az oldalon található hivatkozások után
-        a weboldal üzemeltetője jutalékot kaphat, külön költség nélkül
-        a látogató számára.
-      </p>
-    </div>
+<div class="wrap">
 
-    <div>
-      <a href="/privacy.html">Adatvédelmi irányelvek</a>
-      <a href="/contacts.html">Kapcsolat</a>
-    </div>
-  </div>
+<p>
+  <b>Affiliate tájékoztató:</b>
+  Az oldalon található affiliate hivatkozások után a weboldal
+  üzemeltetője jutalékot kaphat, külön költség nélkül
+  a látogató számára.
+</p>
+
+<a href="/privacy.html">Adatvédelmi irányelvek</a>
+<a href="/contacts.html">Kapcsolat</a>
+
+</div>
 </footer>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  if (!this.reportValidity()) return;
+
+  window.open(
+    "https://affiliate.dr.cash/offer/32805",
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
+</script>
 
 </body>
 </html>
