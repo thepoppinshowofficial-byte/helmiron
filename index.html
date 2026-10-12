@@ -1,411 +1,668 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore Helmiron product information and choose your country for local details.">
-<title>Helmiron | Product Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="HELMIRON termékinformációk, összetevők és rendelési tudnivalók.">
+<title>HELMIRON | Termékinformációk</title>
 
 <style>
 :root {
-  --green: #28684f;
-  --light-green: #eaf4ed;
-  --text: #20302a;
-  --muted: #64736b;
-  --border: #dfe8e1;
-  --background: #fbfcf8;
+  --green: #32724e;
+  --dark: #20342a;
+  --cream: #f7f7f0;
+  --pale: #e8f0e6;
+  --gold: #efc75e;
+  --text: #29332d;
+  --muted: #69756d;
+  --line: #dce4dc;
 }
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--background);
+  background: var(--cream);
   color: var(--text);
-  line-height: 1.6;
+  font: 16px/1.6 Arial, sans-serif;
 }
 
-.container {
-  width: min(1080px, 92%);
+.wrap {
+  width: min(1120px, 92%);
   margin: auto;
 }
 
-header {
-  background: white;
-  border-bottom: 1px solid var(--border);
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
 }
 
 .nav {
-  min-height: 72px;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 16px;
 }
 
-.logo {
-  color: var(--green);
+.brand {
+  font-weight: 900;
   font-size: 27px;
-  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--green);
 }
 
-.tag {
-  background: var(--light-green);
-  color: var(--green);
-  padding: 7px 12px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: bold;
+.nav-note {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--muted);
 }
 
 .hero {
-  text-align: center;
-  padding: 55px 0 30px;
+  background: linear-gradient(115deg, #f2f3e8, #e1ebdf);
+  padding: 44px 0 48px;
 }
 
-.eyebrow {
-  color: var(--green);
-  font-weight: bold;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.kicker {
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: var(--green);
+  font-weight: 800;
 }
 
 h1 {
-  font-size: clamp(32px, 5vw, 48px);
-  line-height: 1.15;
-  margin: 14px auto;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 12px 0 18px;
+  color: var(--dark);
 }
 
-.subtitle {
-  color: var(--muted);
+h2 {
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.18;
+  color: var(--dark);
+  margin: 0 0 18px;
+}
+
+h3 {
+  font-size: 23px;
+  line-height: 1.25;
+  color: var(--dark);
+  margin: 0 0 14px;
+}
+
+p { margin: 0 0 15px; }
+
+.hero p {
+  max-width: 570px;
+  color: #4f6155;
   font-size: 18px;
-  max-width: 680px;
-  margin: auto;
 }
 
-.product {
+.highlight {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.hero-art {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.leaf {
+  position: absolute;
+  width: 210px;
+  height: 120px;
+  border-radius: 100% 0 100% 0;
+  background: #9bb998;
+  opacity: .55;
+  transform: rotate(-28deg);
+}
+
+.leaf.l2 {
+  width: 160px;
+  height: 90px;
+  background: #c5d5a4;
+  transform: rotate(25deg) translate(90px, 70px);
+}
+
+.jar {
+  position: relative;
+  width: 190px;
+  height: 230px;
+  border-radius: 27px 27px 35px 35px;
+  background: linear-gradient(90deg, #f0ead9, #fffdf3 48%, #e6dfc9);
+  border: 1px solid #d8d1bc;
+  box-shadow: 18px 22px 35px #243c2925;
+  z-index: 1;
+}
+
+.jar-cap {
+  position: absolute;
+  width: 112px;
+  height: 34px;
+  top: -27px;
+  left: 39px;
+  border-radius: 8px 8px 3px 3px;
+  background: #345b43;
+}
+
+.jar-label {
+  position: absolute;
+  top: 66px;
+  left: 12px;
+  right: 12px;
+  background: white;
+  border: 1px solid var(--line);
+  text-align: center;
+  padding: 19px 7px;
+}
+
+.jar-label strong {
+  display: block;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--green);
+}
+
+.jar-label small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  color: #6b776e;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border: 0;
+  border-radius: 7px;
+  padding: 15px 23px;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #204e35;
+  transition: .15s;
+}
+
+.btn:hover {
+  background: #245c3d;
+  transform: translateY(-1px);
+}
+
+.btn.gold {
+  background: #e9bd4c;
+  color: #243126;
+  box-shadow: 0 5px 0 #b58b2d;
+}
+
+.smallprint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 13px;
+}
+
+.section { padding: 58px 0; }
+
+.section.white { background: white; }
+
+.center { text-align: center; }
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #59665e;
+}
+
+.benefits,
+.ingredients {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.benefit,
+.ingredient {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 24px;
+}
+
+.benefit .symbol {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.benefit h3,
+.ingredient h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.benefit p,
+.ingredient p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.ingredient { background: #f8faf6; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.step {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.step-num {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--pale);
+  color: var(--green);
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.offer {
+  background: linear-gradient(135deg, #e7efe2, #f8f5e9);
+  padding: 60px 0;
+}
+
+.offer-card {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 30px;
   align-items: center;
   background: white;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px;
-  margin: 25px auto 38px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 38px #20342a10;
 }
 
-.product-visual {
-  min-height: 290px;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #edf5ed, #f9f4e7);
+.offer-art {
+  background: #eef4e9;
+  border-radius: 14px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.bottle {
-  position: relative;
-  width: 150px;
-  height: 205px;
-  border: 1px solid #ded6bf;
-  border-radius: 20px 20px 28px 28px;
-  background: linear-gradient(90deg, #f5f0df, #fffdf4, #e9e1cb);
-  box-shadow: 12px 18px 25px #20302a22;
+.formbox h2 { font-size: 30px; }
+
+.formbox p { color: var(--muted); }
+
+.form-note {
+  background: #f6f8f3;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0;
 }
 
-.cap {
-  position: absolute;
-  top: -24px;
-  left: 35px;
-  width: 80px;
-  height: 30px;
-  background: #476c55;
-  border-radius: 7px 7px 3px 3px;
+.notice {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 900px;
+  margin: 25px auto 0;
 }
 
-.bottle-label {
-  position: absolute;
-  top: 58px;
-  left: 10px;
-  right: 10px;
-  padding: 17px 5px;
-  text-align: center;
+.faq {
+  max-width: 850px;
+  margin: 25px auto 0;
+}
+
+.faq details {
   background: white;
-  border: 1px solid var(--border);
-}
-
-.bottle-label strong {
-  display: block;
-  color: var(--green);
-  font-size: 19px;
-  letter-spacing: 1px;
-}
-
-.bottle-label small {
-  display: block;
-  margin-top: 8px;
-  font-size: 9px;
-  letter-spacing: 1px;
-}
-
-h2 {
-  font-size: 25px;
-  line-height: 1.25;
-}
-
-.description { color: var(--muted); }
-
-.button {
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  padding: 15px 23px;
-  background: var(--green);
-  color: white;
-  font-weight: bold;
+  border: 1px solid var(--line);
   border-radius: 9px;
-  margin-top: 12px;
-  transition: background .2s, transform .2s;
+  padding: 16px 18px;
+  margin: 10px 0;
 }
 
-.button:hover {
-  background: #1d503b;
-  transform: translateY(-1px);
+.faq summary {
+  font-weight: 800;
+  cursor: pointer;
 }
 
-.disclaimer {
-  font-size: 12px;
+.faq details p {
+  margin: 12px 0 0;
   color: var(--muted);
-  margin-top: 14px;
 }
-
-.section-heading {
-  text-align: center;
-  margin: 42px 0 20px;
-}
-
-.countries {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-bottom: 45px;
-}
-
-.country {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: white;
-  padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.country:hover {
-  border-color: var(--green);
-}
-
-.flag { font-size: 27px; }
-
-.country strong, .country small { display: block; }
-
-.country small {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.arrow {
-  margin-left: auto;
-  color: var(--green);
-  font-size: 23px;
-}
-
-.information {
-  padding: 22px;
-  background: var(--light-green);
-  border-radius: 15px;
-  margin-bottom: 38px;
-}
-
-.information h2 { font-size: 21px; }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding: 25px 0;
+  background: #1e3528;
+  color: #e8efe8;
+  padding: 30px 0;
   font-size: 12px;
-  color: var(--muted);
 }
 
 footer a {
-  color: var(--green);
+  color: #e8efe8;
   margin-right: 15px;
 }
 
-@media (max-width: 700px) {
-  .product { grid-template-columns: 1fr; padding: 18px; }
-  .countries { grid-template-columns: repeat(2, 1fr); }
-  .hero { padding-top: 38px; }
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 440px) {
-  .countries { grid-template-columns: 1fr; }
-  .tag { font-size: 9px; }
-  .nav { min-height: 64px; }
+@media(max-width:760px) {
+  .hero-grid,
+  .offer-card { grid-template-columns: 1fr; }
+
+  .hero-art { min-height: 260px; }
+
+  .benefits,
+  .ingredients { grid-template-columns: 1fr; }
+
+  .steps { grid-template-columns: repeat(2, 1fr); }
+
+  .section { padding: 42px 0; }
+
+  .offer-card { padding: 18px; }
+}
+
+@media(max-width:430px) {
+  .steps { grid-template-columns: 1fr; }
+
+  .nav-note { font-size: 10px; }
+
+  .btn { width: 100%; }
+
+  .hero { padding-top: 34px; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="logo">Helmiron<span style="color:#b5c9a7">.</span></div>
-    <div class="tag">PRODUCT INFORMATION</div>
+<header class="topbar">
+  <div class="wrap nav">
+    <div class="brand">HELMIRON<span style="color:#b7c99c">.</span></div>
+    <div class="nav-note">Termékinformációk</div>
   </div>
 </header>
 
-<main class="container">
+<main>
 
-  <section class="hero">
-    <div class="eyebrow">A simple place to start</div>
-    <h1>Discover Helmiron</h1>
-    <p class="subtitle">
-      Explore product information and choose your country
-      to find relevant local details and availability.
-    </p>
-  </section>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Ismerje meg a terméket</div>
 
-  <section class="product">
+      <h1>
+        HELMIRON<br>
+        <span class="highlight">Termékinformációk</span>
+      </h1>
 
-    <div class="product-visual" aria-label="Illustration of a bottle">
-      <div class="bottle">
-        <div class="cap"></div>
-        <div class="bottle-label">
+      <p>
+        Tájékozódjon az összetevőkről, a használati útmutatóról
+        és a rendelés menetéről, mielőtt döntést hoz.
+      </p>
+
+      <a class="btn gold" href="#lead-form">
+        ÉRDEKEL A TERMÉK →
+      </a>
+
+      <p class="smallprint">
+        A termék részleteit és elérhetőségét az ajánlati oldalon ellenőrizze.
+      </p>
+    </div>
+
+    <div class="hero-art" aria-label="Helmiron termék illusztráció">
+      <div class="leaf"></div>
+      <div class="leaf l2"></div>
+
+      <div class="jar">
+        <div class="jar-cap"></div>
+        <div class="jar-label">
           <strong>HELMIRON</strong>
-          <small>PRODUCT INFORMATION</small>
+          <small>TERMÉKINFORMÁCIÓ</small>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div>
-      <div class="eyebrow">Product overview</div>
-      <h2>Discover the product</h2>
+<section class="section white">
+  <div class="wrap center">
+    <div class="kicker">Áttekintés</div>
+    <h2>Mi az a Helmiron?</h2>
 
-      <p class="description">
-        Explore the available product details, ingredients,
-        directions and purchasing information before making
-        your decision. Always check the official label and
-        local product information.
-      </p>
-
-      <p class="description">
-        Review ingredient and allergen information carefully.
-        If you take medication, have a health condition, or
-        are pregnant or breastfeeding, consult a qualified
-        healthcare professional before using a supplement.
-      </p>
-
-      <!-- DR.CASH TRACKING LINK -->
-      <a
-        class="button"
-        href="https://affiliate.dr.cash/offer/32805"
-        target="_blank"
-        rel="sponsored nofollow noopener noreferrer"
-      >
-        Check Offer &amp; Availability →
-      </a>
-
-      <p class="disclaimer">
-        You will be redirected to the offer destination.
-        Availability and terms may vary.
-      </p>
-    </div>
-
-  </section>
-
-  <section>
-    <div class="section-heading">
-      <div class="eyebrow">Local information</div>
-      <h2>Choose Your Country</h2>
-      <p class="description">
-        Select a country to view its local product information.
-      </p>
-    </div>
-
-    <div class="countries">
-
-      <a class="country" href="https://helmiron.eu/pl/">
-        <span class="flag">🇵🇱</span>
-        <span><strong>Polska</strong><small>Polski</small></span>
-        <span class="arrow">›</span>
-      </a>
-
-      <a class="country" href="https://helmiron.eu/hu/">
-        <span class="flag">🇭🇺</span>
-        <span><strong>Magyarország</strong><small>Magyar</small></span>
-        <span class="arrow">›</span>
-      </a>
-
-      <a class="country" href="https://helmiron.eu/cz/">
-        <span class="flag">🇨🇿</span>
-        <span><strong>Česko</strong><small>Čeština</small></span>
-        <span class="arrow">›</span>
-      </a>
-
-      <a class="country" href="https://helmiron.eu/sk/">
-        <span class="flag">🇸🇰</span>
-        <span><strong>Slovensko</strong><small>Slovenčina</small></span>
-        <span class="arrow">›</span>
-      </a>
-
-      <a class="country" href="https://helmiron.eu/hr/">
-        <span class="flag">🇭🇷</span>
-        <span><strong>Hrvatska</strong><small>Hrvatski</small></span>
-        <span class="arrow">›</span>
-      </a>
-
-      <a class="country" href="https://helmiron.eu/si/">
-        <span class="flag">🇸🇮</span>
-        <span><strong>Slovenija</strong><small>Slovenščina</small></span>
-        <span class="arrow">›</span>
-      </a>
-
-    </div>
-  </section>
-
-  <section class="information">
-    <h2>Important Information</h2>
-    <p>
-      This page provides general product information and does
-      not claim that a supplement diagnoses, treats, cures or
-      prevents any disease. Read the product label and consult
-      a healthcare professional when appropriate.
+    <p class="intro">
+      Ezen az oldalon általános termékinformációkat talál.
+      Rendelés előtt mindig olvassa el a csomagoláson feltüntetett
+      összetevőket, figyelmeztetéseket és használati útmutatót.
     </p>
-  </section>
+
+    <div class="benefits">
+      <article class="benefit">
+        <div class="symbol">🌿</div>
+        <h3>Összetevők áttekintése</h3>
+        <p>Tekintse át a teljes összetevőlistát és az allergéneket a termék címkéjén.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="symbol">📋</div>
+        <h3>Használati útmutató</h3>
+        <p>Kövesse a csomagoláson szereplő adagolási és tárolási utasításokat.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="symbol">ℹ️</div>
+        <h3>Tudatos döntés</h3>
+        <p>Kérdés esetén kérje egészségügyi szakember tanácsát.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center">
+      <div class="kicker">Összetevőkkel kapcsolatos információk</div>
+      <h2>Mit érdemes ellenőrizni?</h2>
+      <p class="intro">
+        A pontos összetételt mindig a termék aktuális címkéje alapján ellenőrizze.
+      </p>
+    </div>
+
+    <div class="ingredients">
+      <article class="ingredient">
+        <h3>Növényi összetevők</h3>
+        <p>Olvassa el a címkén feltüntetett növényi összetevőket és azok mennyiségét.</p>
+      </article>
+
+      <article class="ingredient">
+        <h3>Allergének és figyelmeztetések</h3>
+        <p>Ellenőrizze az allergéninformációkat és a használatra vonatkozó figyelmeztetéseket.</p>
+      </article>
+
+      <article class="ingredient">
+        <h3>Használati útmutató</h3>
+        <p>Ne lépje túl a címkén feltüntetett ajánlott napi adagot.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap center">
+    <div class="kicker">A rendelés menete</div>
+    <h2>Hogyan tovább?</h2>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step-num">1</div>
+        <strong>Termékinformáció</strong>
+        <p>Olvassa el a rendelkezésre álló információkat.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-num">2</div>
+        <strong>Ajánlat megtekintése</strong>
+        <p>A gombbal nyissa meg a kampány ajánlati oldalát.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-num">3</div>
+        <strong>Űrlap kitöltése</strong>
+        <p>Az ajánlati oldalon adja meg a kért adatokat, ha folytatni szeretné.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-num">4</div>
+        <strong>Visszaigazolás</strong>
+        <p>Kövesse az ajánlati oldalon megjelenő további lépéseket.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="lead-form">
+  <div class="wrap">
+    <div class="offer-card">
+
+      <div class="offer-art">
+        <div class="jar">
+          <div class="jar-cap"></div>
+          <div class="jar-label">
+            <strong>HELMIRON</strong>
+            <small>TERMÉKINFORMÁCIÓ</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="formbox">
+        <div class="kicker">Következő lépés</div>
+        <h2>Tekintse meg az ajánlatot</h2>
+
+        <p>
+          Az ajánlati oldalon ellenőrizheti az aktuális árat,
+          a feltételeket és az elérhetőséget.
+        </p>
+
+        <!-- Dr.Cash tracking link -->
+        <a
+          class="btn"
+          style="width:100%"
+          href="https://affiliate.dr.cash/offer/32805"
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+        >
+          AJÁNLAT MEGTEKINTÉSE →
+        </a>
+
+        <div class="form-note">
+          Az ajánlati oldalon jelenhet meg a név- és telefonszám-űrlap,
+          ha azt az ajánlat biztosítja. Ez az oldal önmagában nem küld személyes adatokat.
+        </div>
+
+        <p class="smallprint">
+          A gomb az affiliate követési linken keresztül az ajánlati oldalra irányítja át.
+        </p>
+      </div>
+
+    </div>
+
+    <p class="notice">
+      Fontos: Ez az oldal általános termékinformációkat közöl, és nem állítja,
+      hogy a termék betegséget diagnosztizál, kezel, gyógyít vagy megelőz.
+      Az étrend-kiegészítő nem helyettesíti a változatos, kiegyensúlyozott
+      étrendet vagy az egészségügyi szakember tanácsát.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center">
+    <div class="kicker">Gyakori kérdések</div>
+    <h2>Hasznos tudnivalók</h2>
+
+    <div class="faq">
+      <details>
+        <summary>Hol ellenőrizhetem az összetevőket?</summary>
+        <p>Olvassa el a termék csomagolásán és az ajánlati oldalon található aktuális összetevőlistát és figyelmeztetéseket.</p>
+      </details>
+
+      <details>
+        <summary>Hogyan rendelhetek?</summary>
+        <p>Kattintson az „Ajánlat megtekintése” gombra, majd kövesse az ajánlati oldalon feltüntetett lépéseket.</p>
+      </details>
+
+      <details>
+        <summary>Mit tegyek, ha egészségügyi kérdésem van?</summary>
+        <p>Kérjen tanácsot orvostól vagy gyógyszerésztől, különösen akkor, ha gyógyszert szed vagy egészségügyi állapota van.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer>
-  <div class="container">
-    <p>
-      <strong>Affiliate disclosure:</strong>
-      This website may earn a commission from qualifying
-      purchases made through affiliate links, at no additional
-      cost to the customer.
-    </p>
+  <div class="wrap footer-row">
+    <div>
+      <strong>HELMIRON — Termékinformációk</strong>
+      <p style="margin:8px 0 0">
+        Affiliate tájékoztató: az oldalon található hivatkozások után
+        a weboldal üzemeltetője jutalékot kaphat, külön költség nélkül
+        a látogató számára.
+      </p>
+    </div>
 
-    <p>
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/terms">Terms</a>
-      <a href="/contact">Contact</a>
-    </p>
-
-    <p>© 2026 Product Information. All rights reserved.</p>
+    <div>
+      <a href="/privacy.html">Adatvédelmi irányelvek</a>
+      <a href="/contacts.html">Kapcsolat</a>
+    </div>
   </div>
 </footer>
 
